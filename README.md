@@ -13,10 +13,10 @@ Know that feeling when you're reading a long blog post or article and you just w
 
 ###How it works
 
-After the quick installation of Webmark, you can add webmarks to webpages by using the context menu (right mouse click) Webmark ? Add webmark or with the shortcut keys: ? shift + a.
+After the quick installation of Webmark, you can add webmarks to webpages by using the context menu (right mouse click) Webmark &rarr; Add webmark or with the shortcut keys: shift + a.
 
-In order to remove a webmark, right click on it and select Webmark ? Remove Webmark. 
-To remove webmarks in chronological order (undo) use the shortcut keys: ? shift + z.
+In order to remove a webmark, right click on it and select Webmark &rarr; Remove Webmark. 
+To remove webmarks in chronological order (undo) use the shortcut keys: shift + z.
 
 	
 ###Enjoy!
