@@ -1,0 +1,204 @@
+body
+{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	margin:0;
+	padding:0;
+}
+
+span.key
+{
+	padding:3px 8px;
+	border-radius:3px;
+	border-right:solid 3px #ddd;
+	border-left:solid 3px #aaa;
+	border-top:solid 1px #ccc;
+	border-bottom:solid 4px #ccc;
+	color:#333;
+	background: #fcfff4; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZjZmZmNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlOWU5Y2UiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  #fcfff4 0%, #e9e9ce 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fcfff4), color-stop(100%,#e9e9ce)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #fcfff4 0%,#e9e9ce 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #fcfff4 0%,#e9e9ce 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #fcfff4 0%,#e9e9ce 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #fcfff4 0%,#e9e9ce 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#e9e9ce',GradientType=0 ); /* IE6-8 */
+}
+
+p.main
+{
+	font-size:18px;
+}
+
+#background
+{
+	position:absolute;
+	margin:0;
+	padding:0;
+	padding-top:3px;
+	left:0;
+	top:50px;
+	width:100%;
+	height:348px;
+	overflow:hidden;
+	opacity: .5;
+}
+
+.circle
+{
+	padding:25px;
+	border-radius: 50px;
+	display:inline-block;
+	border: solid 2px #fff;
+	box-shadow: 0 0 2px rgba(0,0,0,.5);
+	-webkit-transition: 500ms;
+}
+
+nav
+{
+	position:fixed;
+	top:0;
+	width:100%;
+	border-bottom: solid 1px #cecece;
+	margin:0;
+	padding:10px;
+	background:#333;
+	z-index:2147483640;
+}
+
+nav ul
+{
+	list-style-type: none;
+	list-style-position: outside;
+	padding:0;
+	margin:0;
+}
+
+nav ul li
+{
+	display: inline-block;
+	padding:0 10px;
+}
+
+nav ul li:first-child
+{
+	padding-left:0;
+}
+
+nav ul li a
+{
+	text-decoration: none;
+	color:#cecece;
+	font-size:14px;
+}
+
+nav ul li a.button
+{
+	color:#fff;
+	padding:5px 7px;
+	font-weight:bold;
+	border-radius: 5px;
+	background: #0cad00;
+}
+
+nav ul li a.button:active
+{
+	box-shadow: inset 0 2px 2px rgba(0,0,0,.6);
+}
+
+nav ul li a.button:hover
+{
+	text-decoration: none;
+}
+
+nav ul li a.button img
+{
+	vertical-align: -3px;
+}
+
+nav ul li a:hover
+{
+	text-decoration: underline;
+}
+
+header
+{
+	background:#fff;
+	padding-bottom:10px;
+	border-bottom: dashed 1px #cecece;
+}
+
+section
+{
+	display:inline-block;
+	margin:93px 0 50px -560px;
+	padding:20px 20px 20px 199px;
+	background:url('../images/128.png') no-repeat 40px 20px;
+	background-color:#fff;
+	-webkit-transition: 500ms;
+	position:relative;
+}
+
+section h1
+{
+	color:#4e4e56;
+	font-size:72px;
+	padding:0;
+	margin:0;
+}
+
+section h1 span
+{
+	vertical-align: sub;
+	font-size:9px;
+	font-weight:normal;
+	color:#cecece;
+}
+
+section h2
+{
+	color:#cecece;
+	font-size:36px;
+	padding:0;
+	margin:0;
+}
+
+.text-wrapper
+{
+	margin:50px 0 50px 60px;
+	width:640px;
+	padding-left: 20px;
+	border-left:dashed 2px #eee;
+	line-height:24px;
+}
+
+.text-wrapper .title
+{
+	margin-top:20px;
+	font-weight:bold;
+	color:#4e4e56;
+	font-size:24px;
+}
+
+.text-wrapper .text
+{
+	font-size:14px;
+	color:#333;
+}
+
+footer
+{
+	text-align: center;
+	position:fixed;
+	padding:10px 0;
+	bottom:0;
+	width:100%;
+	background:rgba(255,255,255,.7);
+	border-top:dashed 1px #cecece;
+	color:#333;
+	font-size:14px;
+}
