@@ -8,6 +8,11 @@ body
 	padding:0;
 }
 
+.fr
+{
+	float:right;
+}
+
 span.key
 {
 	padding:3px 8px;
@@ -63,11 +68,11 @@ nav
 	position:fixed;
 	top:0;
 	width:100%;
-	border-bottom: solid 1px #cecece;
 	margin:0;
 	padding:10px;
 	background:#333;
 	z-index:2147483640;
+	-webkit-transition: 200ms;
 }
 
 nav ul
@@ -169,7 +174,7 @@ section h2
 
 .text-wrapper
 {
-	margin:50px 0 50px 60px;
+	margin:50px 0 100px 60px;
 	width:640px;
 	padding-left: 20px;
 	border-left:dashed 2px #eee;
@@ -178,16 +183,32 @@ section h2
 
 .text-wrapper .title
 {
-	margin-top:20px;
+	margin-top:10px;
+	padding-top:20px;
 	font-weight:bold;
 	color:#4e4e56;
 	font-size:24px;
+	border-top:dashed 2px #eee;
+}
+
+.text-wrapper .title:first-child
+{
+	padding-top:0;
+	border-top:none;
+}
+
+.text-wrapper .title .subtitle
+{
+	margin-top:10px;
+	font-size:20px;
+	font-weight:normal;
 }
 
 .text-wrapper .text
 {
 	font-size:14px;
 	color:#333;
+	margin-bottom:30px;
 }
 
 footer
