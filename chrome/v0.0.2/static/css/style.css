@@ -1,0 +1,62 @@
+.-webmark-hidden-anchor
+{
+	visibility: hidden;
+	position: absolute;
+	left: 0;
+	width:0px;
+	height:0px;
+}
+
+.-webmark-action-link
+{
+	position: fixed;
+	right: -40px;
+	display: inline;
+	cursor: pointer;
+	z-index: 2147483647;
+	-webkit-transition: 100ms;
+	border-radius: 50px;
+	box-shadow: 0 0 2px rgba(0,0,0,.5);
+	padding:12px;
+	opacity: 0.5;
+	border: solid 2px #fff;
+}
+
+.-webmark-action-link:hover
+{
+	opacity: 1;
+	-webkit-transform: scale(1.1);
+}
+
+.-webmark-arrows-wrapper
+{
+	position:relative;
+	width: 0px;
+	height:0px;
+}
+
+.-webmark-arrow-up
+{
+	-webkit-transition: 200ms;
+	left:-8px;
+	top:-4px;
+	width: 0; 
+	height: 0; 
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-bottom: 8px solid black;
+	position:absolute;
+}
+
+.-webmark-arrow-down
+{
+	-webkit-transition: 200ms;
+	left:-8px;
+	top:-4px;
+	width: 0; 
+	height: 0; 
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-top: 8px solid #f00;
+	position:absolute;
+}

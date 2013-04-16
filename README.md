@@ -1,4 +1,4 @@
-Webmark
+Webmark v0.0.2
 ===
 
 Create and Scroll to bookmarks inside webpages
@@ -18,6 +18,12 @@ After the quick installation of Webmark, you can add webmarks to webpages by usi
 In order to remove a webmark, right click on it and select Webmark &rarr; Remove Webmark. 
 To remove webmarks in chronological order (undo) use the shortcut keys: shift + z.
 
-	
+
+###Version 0.0.2 released!
+* Saving Webmarks - when returning to a webpage, old webmarks will be displayed.
+* Syncing webmarks with other devices that signed in to chrome with the same google account.
+* Added support for lazy load webpages - repositioning the Webmarks when loading more data.
+* Arrow indicators - when moving the mouse over a Webmark, an arrow indicates the direction of the location (up or down) will shown.
+
 ###Enjoy!
 
