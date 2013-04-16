@@ -35,15 +35,6 @@ function initCircles(){
 
 	document.getElementsByTagName('section')[0].style.marginLeft = 0;
 }
-
-function onScroll(e){
-	if(document.body.scrollTop > 15){
-		document.getElementsByTagName('nav')[0].style.boxShadow = '-5px 2px 2px rgba(0,0,0,.4)';
-	} else {
-		document.getElementsByTagName('nav')[0].style.boxShadow = '';
-	}
-}
-
 function generateRandomColor(){
 	return '#' + Math.floor(Math.random() * 16777215).toString(16);
 }
@@ -55,4 +46,3 @@ function calculateOptimalCirclesCount(){
 
 window.onload = initPage;
 window.onresize = initCircles;
-window.onscroll = onScroll;
