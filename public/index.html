@@ -4,25 +4,35 @@
 		<title>Webmark for Google Chrome</title>
 		<link rel="stylesheet" type="text/css" href="static/css/style.css">
 		<link rel="icon" type="image/png" href="static/images/16.png">
+
+		<meta property="og:site_name" content="Webmark"/>
+		<meta property="og:url" content="http://uditalias.github.io/webmark/public/"/>
+		<meta property="og:title" content="Webmark - Create and Scroll to bookmarks inside webpages"/>
+		<meta property="fb:admins" content="586643399" />
+		<meta property="og:image" content="http://uditalias.github.io/webmark/public/static/images/200.png"/>
+		<meta property="og:description" content="Webmark is a simple Google Chrome Extension that makes it easy to navigate inside long webpages."/>
 	</head>
 	<body>
-		<a href="https://github.com/uditalias/webmark"><img style="z-index:2147483647;position: fixed; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
 		<nav>
 			<ul>
 				<li><a href="#home">Home</a></li>
 				<li><a href="#how-it-works">How it works</a></li>
+				<li><a href="#change-log">Change log</a></li>
 				<li><a href="https://chrome.google.com/webstore/detail/webmark/ccppdejlimaholikmlgedjnglaamgmca" target="_blank" class="button"><img alt="" src="static/images/chrome.png" /> Download to Chrome &rarr;</a></li>
+				<li class="fr"><iframe src="http://ghbtns.com/github-btn.html?user=uditalias&type=follow"
+  allowtransparency="true" frameborder="0" scrolling="0" width="132" height="20" style="margin-bottom:-5px;"></iframe></li>
+				<li class="fr"><iframe src="http://ghbtns.com/github-btn.html?user=uditalias&repo=webmark&type=fork"
+  allowtransparency="true" frameborder="0" scrolling="0" width="55" height="20" style="margin-bottom:-5px;"></iframe></iframe></li>
 			</ul>
 		</nav>
 		<a name="home"></a>
 		<header>
 			<div id="background"></div>
 			<section>
-				<h1>Webmark<span id="ver">v0.0.1</span></h1>
+				<h1>Webmark<span id="ver">v0.0.2</span></h1>
 				<h2>Create and Scroll<br/>to bookmarks<br/>inside webpages.</h2>
 			</section>
 		</header>
-
 		<div class="text-wrapper">
 			<div class="title">
 				What is Webmark?
@@ -30,16 +40,15 @@
 			<div class="text">
 				<p class="main">Webmark is a simple Google Chrome Extension that makes it easy to
 				navigate inside long webpages.</p>
-
 				<p>With Webmark you create unlimited bookmarks inside webpages so you can
 				scroll from point to point inside the page quickly.</p>
-
 				<p>Know that feeling when you're reading a long blog post or article
 				and you just want to scroll a bit to the top or the bottom of the page
 				and then come back where you've stoped? Just create a webmark where you want
 				and scroll back to it when you want.</p>
+				<p>The Webmark extension is an open-source project hosted in <a href="https://github.com/uditalias/webmark">GitHub</a>.
+				feel free to explore this cool project, fork it and contribute by adding more cool features.</p>
 			</div>
-
 			<div class="title">
 				How it works<a name="how-it-works"></a>
 			</div>
@@ -50,12 +59,25 @@
 				<br/>
 				To remove webmarks in chronological order (undo) use the shortcut keys: <span class="key">&#8679; shift</span> + <span class="key">z</span>.</p>
 			</div>
+			<div class="title">
+				Version 0.0.2 released!<a name="change-log"></a>
+				<div class="subtitle">Change log</div>
+			</div>
+			<div class="text">
+				<ul>
+					<li>Saving Webmarks - when returning to a webpage, old webmarks will be displayed.</li>
+					<li>Syncing webmarks with other devices that signed in to chrome with the same google account.</li>
+					<li>Added support for lazy load webpages - repositioning the Webmarks when loading more data.</li>
+					<li>Arrow indicators - when moving the mouse over a Webmark, an arrow indicates the direction of the location (up or down) will shown.</li>
+				</ul>
+			</div>
 		</div>
-
 		<footer>
 			&mdash; <b>Webmark</b> | Developed by <a target="_blank" href="http://udidu.blogspot.com">udidu</a> &mdash;
 		</footer>
-
+		<!--[if lt IE 9]>
+    	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	    <![endif]-->
 		<script type="text/javascript" src="scripts/main.js"></script>
 	</body>
 </html>
