@@ -25,7 +25,7 @@ To remove webmarks in chronological order (undo) use the shortcut keys: shift + 
 * Added support for lazy load webpages - repositioning the Webmarks when loading more data.
 * Arrow indicators - when moving the mouse over a Webmark, an arrow indicates the direction of the location (up or down) will shown.
 
-- Version 0.0.2.1
+###Version 0.0.2.1
 * Bugs have been fixed.
 
 ###Enjoy!
