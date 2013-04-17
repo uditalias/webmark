@@ -1,4 +1,4 @@
-Webmark v0.0.2.1
+Webmark v0.0.2.2
 ===
 
 Create and Scroll to bookmarks inside webpages
@@ -27,6 +27,10 @@ To remove webmarks in chronological order (undo) use the shortcut keys: shift + 
 
 ###Version 0.0.2.1
 * Bugs have been fixed.
+
+###Version 0.0.2.2
+* Bugs have been fixed.
+
 
 ###Enjoy!
 
