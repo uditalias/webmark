@@ -1,4 +1,4 @@
-Webmark v0.0.2
+Webmark v0.0.2.1
 ===
 
 Create and Scroll to bookmarks inside webpages
@@ -24,6 +24,9 @@ To remove webmarks in chronological order (undo) use the shortcut keys: shift + 
 * Syncing webmarks with other devices that signed in to chrome with the same google account.
 * Added support for lazy load webpages - repositioning the Webmarks when loading more data.
 * Arrow indicators - when moving the mouse over a Webmark, an arrow indicates the direction of the location (up or down) will shown.
+
+- Version 0.0.2.1
+* Bugs have been fixed.
 
 ###Enjoy!
 
