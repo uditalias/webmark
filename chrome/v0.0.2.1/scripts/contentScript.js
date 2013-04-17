@@ -226,11 +226,7 @@ function handleUndoWebmarkShortcut(){
 }
 
 function generateRandomColor(){
-	var hex = Math.floor(Math.random() * 16777215).toString(16);
-	while(!hex){
-		hex = Math.floor(Math.random() * 16777215).toString(16);
-	}
-	return '#' + hex;
+	return '#' + ('000000' + Math.floor(Math.random()*16777215).toString(16)).slice(-6);
 }
 
 function recalcWebmarksPosition(){
