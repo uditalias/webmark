@@ -23,7 +23,7 @@ var _keyHandler = {
 			which: 88, //x
 			special: 'shiftKey',
 			handler: handleDeleteSelectedWebmarkShortcut,
-			enabled: true
+			enabled: false
 		}		
 	}
 };
@@ -159,12 +159,12 @@ document.body.addEventListener('keyup', function(e){
 	var shortcuts = _keyHandler.shortcuts;
 	for(h in shortcuts){
 		var shortcut = shortcuts[h];
-		if (e.which == shortcut.which){
-			if (e[shortcut.special]){
+		if (e.which == shortcut.which &&
+			e[shortcut.special] &&
+			shortcut.enabled){
 				shortcut.handler();
 			}
 		}
-	}	
 }, false);
 
 window.addEventListener('resize', function(e){
