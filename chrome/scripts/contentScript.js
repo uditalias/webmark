@@ -1,6 +1,7 @@
 var _connectionObjectKey = chrome.runtime && chrome.runtime.sendMessage ? 'runtime' : 'extension';
 var _webmarks = {};
 var _webmarksIds = [];
+var	_lastSelectedWebmarkId = null;
 var _lastWebmarkIdContextMenuClick = null;
 var _currentScrollHeight = document.body.scrollHeight;
 var _validateScrollHeightInterval = 1000;
@@ -17,7 +18,13 @@ var _keyHandler = {
 			special: 'shiftKey',
 			handler: handleUndoWebmarkShortcut,
 			enabled: false
-		}
+		},
+		deleteSelected: {
+			which: 88, //x
+			special: 'shiftKey',
+			handler: handleDeleteSelectedWebmarkShortcut,
+			enabled: false
+		}		
 	}
 };
 
@@ -95,7 +102,11 @@ Webmark.prototype.bindEvents = function(){
 	var self = this;
 	
 	this.divActionLink.addEventListener('click', function(){
-		document.getElementById(self.id).scrollIntoView();
+		var id = self.id;
+		
+		_keyHandler.shortcuts.deleteSelected.enabled = true;
+		_lastSelectedWebmarkId = id;
+		document.getElementById(id).scrollIntoView();
 
 		self.arrowUp.style.top = '';
 		self.arrowDown.style.top = '';
@@ -145,18 +156,15 @@ Webmark.prototype.dispose = function(){
 
 
 document.body.addEventListener('keyup', function(e){
-	switch(e.which){
-		case _keyHandler.shortcuts.add.which:
-			if(e[_keyHandler.shortcuts.add.special]){
-				_keyHandler.shortcuts.add.handler();
+	var shortcuts = _keyHandler.shortcuts;
+	for(h in shortcuts){
+		var shortcut = shortcuts[h];
+		if (e.which == shortcut.which &&
+			e[shortcut.special] &&
+			shortcut.enabled){
+				shortcut.handler();
 			}
-			break;
-		case _keyHandler.shortcuts.undo.which:
-			if(e[_keyHandler.shortcuts.undo.special]){
-				_keyHandler.shortcuts.undo.handler();	
-			}
-			break;
-	}
+		}
 }, false);
 
 window.addEventListener('resize', function(e){
@@ -222,6 +230,12 @@ function handleUndoWebmarkShortcut(){
 	if(_keyHandler.shortcuts.undo.enabled || _webmarksIds.length){
 		var lastWebmarkId = _webmarksIds.pop();
 		removeWebmarkItem(lastWebmarkId, sendMessage);
+	}
+}
+
+function handleDeleteSelectedWebmarkShortcut(){
+	if(_keyHandler.shortcuts.deleteSelected.enabled || _webmarksIds.length){
+		removeWebmarkItem(_lastSelectedWebmarkId, sendMessage);
 	}
 }
 
