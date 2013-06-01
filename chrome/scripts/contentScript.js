@@ -24,7 +24,19 @@ var _keyHandler = {
 			special: 'shiftKey',
 			handler: handleDeleteSelectedWebmarkShortcut,
 			enabled: false
-		}		
+		},
+		pageUp: {
+			which: 33, //PgUp
+			special:'shiftKey',
+			handler: handlePageUp,
+			enabled:true
+		},
+		pageDown: {
+			which: 34, //PgDn
+			special:'shiftKey',
+			handler: handlePageDown,
+			enabled:true
+		}
 	}
 };
 
@@ -32,8 +44,8 @@ function Webmark(params){
 	this.params = params;
 	this.id = this.params.id || generateUID();
 	this.scrollTop = this.params.scrollTop || document.body.scrollTop;
-	this.webmarkAnchorTopPosition = this.params.webmarkAnchorTopPosition || 
-									document.documentElement.scrollTop || 
+	this.webmarkAnchorTopPosition = this.params.webmarkAnchorTopPosition ||
+									document.documentElement.scrollTop ||
 									document.body.scrollTop;
 	this.color = this.params.color || generateRandomColor();
 	this.initComponents();
@@ -41,7 +53,7 @@ function Webmark(params){
 }
 
 Webmark.prototype.calculateViewTopPosition = function(){
-	var webmarkViewTopPosition = 
+	var webmarkViewTopPosition =
 		(window.innerHeight / document.body.scrollHeight) * this.scrollTop;
 
 	this.divActionLink.style.top = webmarkViewTopPosition + 'px';
@@ -162,9 +174,9 @@ document.body.addEventListener('keyup', function(e){
 		if (e.which == shortcut.which &&
 			e[shortcut.special] &&
 			shortcut.enabled){
-				shortcut.handler();
-			}
+			shortcut.handler();
 		}
+	}
 }, false);
 
 window.addEventListener('resize', function(e){
@@ -202,7 +214,7 @@ function addWebmarkItem(response, fromStore, params){
 function removeWebmarkItem(webmarkId, response){
 	var webmark = _webmarks[webmarkId];
 	if(webmark){
-		webmark.dispose();		
+		webmark.dispose();
 
 		delete _webmarks[webmarkId];
 
@@ -239,6 +251,47 @@ function handleDeleteSelectedWebmarkShortcut(){
 	}
 }
 
+function moveToSibling(isUp){
+	if (_webmarks && _lastSelectedWebmarkId) {
+		var currentPosition = _webmarks[_lastSelectedWebmarkId].scrollTop;
+
+		var distance = Infinity;
+		var closeWebmark = null;
+
+		for (var id in _webmarks) {
+			var webmark = _webmarks[id];
+
+			if(webmark != _lastSelectedWebmarkId){
+				var scrollTop =webmark.scrollTop;
+
+				var d = isUp ?  currentPosition - scrollTop : scrollTop - currentPosition;
+
+				if (d<distance && d > 0){
+					distance = d;
+					closeWebmark = webmark;
+				}
+			}
+		}
+
+		if (closeWebmark){
+			var destWebmarkId = closeWebmark.id;
+
+			_lastSelectedWebmarkId = destWebmarkId;
+			document.getElementById(destWebmarkId).scrollIntoView();
+		}
+	}
+}
+
+function handlePageUp(){
+	moveToSibling(true);
+}
+
+function handlePageDown(){
+	moveToSibling(false);
+}
+
+
+
 function generateRandomColor(){
 	return '#' + ('000000' + Math.floor(Math.random()*16777215).toString(16)).slice(-6);
 }
@@ -259,7 +312,26 @@ function initializeStoreWebmarks(data){
 			addWebmarkItem(null, true, data.store[webmarkId]);
 		}
 	}
+
+	markUpperAsSelected();
 }
+
+function markUpperAsSelected(){
+	if (_webmarks && _webmarksIds.length > 0) {
+		var topWebmark = _webmarks[_webmarksIds[0]];
+
+		for (var id in _webmarks) {
+			var webmark = _webmarks[id];
+
+			if (webmark.scrollTop < topWebmark.scrollTop){
+				topWebmark = webmark;
+			}
+		}
+
+		_lastSelectedWebmarkId = topWebmark.id;
+	}
+}
+
 
 window.setInterval(function(){
 	if(_currentScrollHeight != document.body.scrollHeight){
@@ -267,5 +339,6 @@ window.setInterval(function(){
 		recalcWebmarksPosition();
 	}
 }, _validateScrollHeightInterval);
+
 
 sendMessage({ type: 'requestStoreWebmarks', url: window.location.href});
