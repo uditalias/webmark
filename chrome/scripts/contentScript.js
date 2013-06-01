@@ -49,13 +49,13 @@ Webmark.prototype.calculateViewTopPosition = function(){
 
 Webmark.prototype.initComponents = function(){
 	var self = this;
-	
+
 	this.createAnchor();
 
 	this.createLink();
 
 	this.createArrows();
-		
+
 	window.setTimeout(function(){
 		self.divActionLink.style.right = '7px';
 	}, 100);
@@ -100,10 +100,10 @@ Webmark.prototype.createArrows = function(){
 
 Webmark.prototype.bindEvents = function(){
 	var self = this;
-	
+
 	this.divActionLink.addEventListener('click', function(){
 		var id = self.id;
-		
+
 		_keyHandler.shortcuts.deleteSelected.enabled = true;
 		_lastSelectedWebmarkId = id;
 		document.getElementById(id).scrollIntoView();
@@ -111,7 +111,7 @@ Webmark.prototype.bindEvents = function(){
 		self.arrowUp.style.top = '';
 		self.arrowDown.style.top = '';
 	}, false);
-	
+
 	this.divActionLink.addEventListener('mouseover', function(e){
 		_lastWebmarkIdContextMenuClick = e.srcElement.id;
 		sendMessage({ type: 'menuState', id: 'webmark_remove', payload: { enabled: true }});
@@ -123,7 +123,7 @@ Webmark.prototype.bindEvents = function(){
 			self.arrowDown.style.top = '9px';
 		}
 	}, false);
-	
+
 	this.divActionLink.addEventListener('mouseout', function(e){
 		sendMessage({ type: 'menuState', id: 'webmark_remove', payload: { enabled: false }});
 		_keyHandler.shortcuts.undo.enabled = false;
@@ -146,7 +146,7 @@ Webmark.prototype.serialize = function(){
 Webmark.prototype.dispose = function(){
 	var self = this;
 	this.divHiddenAnchor.remove();
-	
+
 	this.divActionLink.style.right = '-40px';
 	window.setTimeout(function(){
 		self.divActionLink.remove();
@@ -203,9 +203,9 @@ function removeWebmarkItem(webmarkId, response){
 	var webmark = _webmarks[webmarkId];
 	if(webmark){
 		webmark.dispose();		
-		
+
 		delete _webmarks[webmarkId];
-		
+
 		var webmarkIdIndex = _webmarksIds.indexOf(webmarkId);
 		if(webmarkIdIndex > -1){
 			_webmarksIds.splice(webmarkIdIndex, 1);
@@ -217,7 +217,7 @@ function removeWebmarkItem(webmarkId, response){
 }
 
 function generateUID() {
-    return ("0000" + (Math.random() * Math.pow(36,4) << 0).toString(36)).substr(-4)
+	return ("0000" + (Math.random() * Math.pow(36,4) << 0).toString(36)).substr(-4)
 }
 
 function handleAddWebmarkShortcut(){
