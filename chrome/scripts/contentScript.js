@@ -1,7 +1,7 @@
 var _connectionObjectKey = chrome.runtime && chrome.runtime.sendMessage ? 'runtime' : 'extension';
 var _webmarks = {};
 var _webmarksIds = [];
-var	_lastSelectedWebmarkId = null;
+var _lastSelectedWebmarkId = null;
 var _lastWebmarkIdContextMenuClick = null;
 var _currentScrollHeight = document.body.scrollHeight;
 var _validateScrollHeightInterval = 1000;
