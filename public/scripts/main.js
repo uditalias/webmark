@@ -50,8 +50,15 @@
 	}
 
 	function calculateOptimalCirclesCount(){
-		var perRow = Math.floor(document.width / circleWidth);
+		var perRow = Math.floor(getDocumentWidth() / circleWidth);
 		return perRow * circleRows;
+	}
+	
+	function getDocumentWidth() {
+		return window.innerWidth ||
+                       document.documentElement.clientWidth ||
+                       document.body.clientWidth ||
+                       document.body.offsetWidth;
 	}
 
 	window.onload = initPage;
